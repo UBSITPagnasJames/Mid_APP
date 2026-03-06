@@ -9,6 +9,7 @@ import { Class } from './DataBinding/class/class';
 import { Style } from './DataBinding/style/style';
 import { Navi } from './Components/navi/navi';
 import { EventComponent } from './DataBinding/event/event';
+import { Products } from './products/products';
 
 export const routes: Routes = [
     {path: 'Home', component: Home},
@@ -20,5 +21,6 @@ export const routes: Routes = [
     {path: 'Attribute', component: Attribute},
     {path: 'Class', component: Class},
     {path: 'Style', component: Style},
+    {path: 'product', component: Products},
     {path: '', redirectTo: 'Home', pathMatch: 'full'}
 ];

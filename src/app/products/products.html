@@ -1,0 +1,26 @@
+<table>
+  <thead>...</thead>
+  <tbody>
+    @for (product of products; track product.id) {
+      <tr>
+        <td>{{ product.id }}</td>
+        <td>{{ product.name }}</td>
+        <td>{{ product.status }}</td>
+        <td>
+          <button (click)="viewProductDetails(product)">View</button>
+        </td>
+      </tr>
+    }
+  </tbody>
+</table>
+
+@if (showModal && selectedProduct) {
+  <div class="modal-overlay" (click)="closeModal()">
+    <div class="modal-content" (click)="$event.stopPropagation()">
+      <h2>Product Details</h2>
+      <p>ID: {{ selectedProduct.id }}</p>
+      <p>Description: {{ selectedProduct.description }}</p>
+      <button (click)="closeModal()">Close</button>
+    </div>
+  </div>
+}
