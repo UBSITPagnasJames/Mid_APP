@@ -1,0 +1,30 @@
+<div class="table-container">
+    <table class="product-table">
+      <thead>
+        <tr>
+          <th>ID</th>
+          <th>Name</th>
+          <th>Status</th>
+          <th>Action</th>
+        </tr>
+      </thead>
+  
+      <tbody>
+        @for (product of products; track product.id) {
+          <tr>
+            <td>{{ product.id }}</td>
+            <td>{{ product.name }}</td>
+            <td>
+              <span class="status">{{ product.status }}</span>
+            </td>
+            <td>
+                <a [routerLink]="['/products0', product.id, 'Details']"
+                class="btn-view" (onClick)="getProduct(product)">  View</a>
+            </td>
+          </tr>
+          
+        }
+      </tbody>
+    </table>
+  </div>
+  

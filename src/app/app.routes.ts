@@ -10,6 +10,8 @@ import { Style } from './DataBinding/style/style';
 import { Navi } from './Components/navi/navi';
 import { EventComponent } from './DataBinding/event/event';
 import { Products } from './products/products';
+import { ProductsList } from './products-list/products-list';
+import { ProductDetails } from './product-details/product-details';
 
 export const routes: Routes = [
     {path: 'Home', component: Home},
@@ -22,5 +24,14 @@ export const routes: Routes = [
     {path: 'Class', component: Class},
     {path: 'Style', component: Style},
     {path: 'product', component: Products},
-    {path: '', redirectTo: 'Home', pathMatch: 'full'}
+    {path: '', redirectTo: 'Home', pathMatch: 'full'},
+    {path: 'ProductsList', component: ProductsList},
+    { path: 'products0', component: ProductsList, children: [{
+        path: ':id',
+        children: [
+          { path: 'Details', component: ProductDetails }
+        ]
+      }
+    ]
+  },
 ];

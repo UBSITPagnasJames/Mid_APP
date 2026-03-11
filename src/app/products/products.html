@@ -1,26 +1,46 @@
-<table>
-  <thead>...</thead>
-  <tbody>
-    @for (product of products; track product.id) {
+<div class="table-container">
+  <table class="product-table">
+    <thead>
       <tr>
-        <td>{{ product.id }}</td>
-        <td>{{ product.name }}</td>
-        <td>{{ product.status }}</td>
-        <td>
-          <button (click)="viewProductDetails(product)">View</button>
-        </td>
+        <th>ID</th>
+        <th>Name</th>
+        <th>Status</th>
+        <th>Action</th>
       </tr>
-    }
-  </tbody>
-</table>
+    </thead>
+
+    <tbody>
+      @for (product of products; track product.id) {
+        <tr>
+          <td>{{ product.id }}</td>
+          <td>{{ product.name }}</td>
+          <td>
+            <span class="status">{{ product.status }}</span>
+          </td>
+          <td>
+            <button class="view-btn" (click)="viewProductDetails(product)">
+              View
+            </button>
+          </td>
+        </tr>
+      }
+    </tbody>
+  </table>
+</div>
 
 @if (showModal && selectedProduct) {
   <div class="modal-overlay" (click)="closeModal()">
     <div class="modal-content" (click)="$event.stopPropagation()">
+
       <h2>Product Details</h2>
-      <p>ID: {{ selectedProduct.id }}</p>
-      <p>Description: {{ selectedProduct.description }}</p>
-      <button (click)="closeModal()">Close</button>
+
+      <div class="modal-body">
+        <p><strong>ID:</strong> {{ selectedProduct.id }}</p>
+        <p><strong>Description:</strong> {{ selectedProduct.description }}</p>
+      </div>
+
+      <button class="close-btn" (click)="closeModal()">Close</button>
+
     </div>
   </div>
 }

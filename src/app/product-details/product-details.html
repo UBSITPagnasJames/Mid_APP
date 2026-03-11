@@ -1,0 +1,18 @@
+@if (showModal && selectedProduct) {
+    <div class="modal-overlay" (click)="closeModal()">
+      <div class="modal-content" (click)="$event.stopPropagation()">
+  
+        <h2>Product Details</h2>
+  
+        <div class="modal-body">
+          <p><strong>ID:</strong> {{ selectedProduct.id }}</p>
+          <p><strong>Description:</strong> {{ selectedProduct.description }}</p>
+        </div>
+  
+        <button class="close-btn" (click)="closeModal()">Close</button>
+  
+      </div>
+    </div>
+  }
+
+  
