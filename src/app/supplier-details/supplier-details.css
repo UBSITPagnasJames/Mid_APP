@@ -1,0 +1,28 @@
+
+h2.black-text {
+  color: #000000 !important;
+  text-align: center;
+}
+
+
+.form-container {
+  color: #000000;
+  font-family: Arial, sans-serif;
+}
+
+label {
+  display: block;
+  margin-top: 10px;
+  font-weight: bold;
+  color: #000000;
+}
+
+
+input, textarea {
+  color: #000000;
+  width: 100%;
+  padding: 8px;
+  margin-top: 5px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+}

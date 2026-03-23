@@ -12,6 +12,8 @@ import { EventComponent } from './DataBinding/event/event';
 import { Products } from './products/products';
 import { ProductsList } from './products-list/products-list';
 import { ProductDetails } from './product-details/product-details';
+import { SuppliersList } from './suppliers-list/suppliers-list';
+import { SupplierDetails } from './supplier-details/supplier-details';
 
 export const routes: Routes = [
     {path: 'Home', component: Home},
@@ -26,6 +28,8 @@ export const routes: Routes = [
     {path: 'product', component: Products},
     {path: '', redirectTo: 'Home', pathMatch: 'full'},
     {path: 'ProductsList', component: ProductsList},
+    {path: 'suppliers', component: SuppliersList},
+    {path: 'suppliers/:id', component: SupplierDetails},
     { path: 'products0', component: ProductsList, children: [{
         path: ':id',
         children: [
